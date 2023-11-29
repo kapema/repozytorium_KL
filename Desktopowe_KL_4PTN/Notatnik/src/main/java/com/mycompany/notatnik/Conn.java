@@ -22,7 +22,7 @@ public class Conn {
         ArrayList<Dane> tab = new ArrayList<>();
         try{
             Class.forName(driver);
-            Connection c = DriverManager.getConnection(url+dbName,userName,dbpassword);
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=CONVERT_TO_NULL");
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery(qr);
             while(rs.next()){
